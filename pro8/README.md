@@ -1,0 +1,2 @@
+Everything in next js is a server component and if we want to make a page available for client then we need too make it client component by using "use client" at the top of the client code page
+If we want to make some specific component for the cient then we can separartely make that component a client component in the form of file and then import it in a server component page. It will work fine.
