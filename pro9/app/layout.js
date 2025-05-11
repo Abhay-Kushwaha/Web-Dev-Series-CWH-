@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-// import SessionWrapper from "@/components/SessionWrapper";
+import SessionWrapper from "@/components/SessionWrapper";
 
 
 const geistSans = Geist({
@@ -22,13 +22,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <SessionWrapper> */}
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        </body>
-      {/* </SessionWrapper> */}
+        <SessionWrapper>
+          {children}
+          {/* Bootstrap JS & Popper */}
+          <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVDv+5tYQFqxqgTw/8a6++nqh3Lj6iZqJhIapOlfTbUQq+fMFhGE8fEUk+I/"
+            crossOrigin="anonymous"
+            defer
+          ></script>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BOzY2URBtvUwhp+NOCpH5CzR1/9BoOZsV7I+1Z4SN2NEvlxNq4r7+zVqULh1YqaV"
+            crossOrigin="anonymous"
+            defer
+          ></script>
+        </SessionWrapper>
+      </body>
     </html>
   );
 }
