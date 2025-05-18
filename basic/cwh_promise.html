@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script class="src">
+        console.log("This is promise");
+        let prom=new Promise((res,rej)=>{
+            let a=Math.random()
+            if(a>0.5){
+                rej("Nothing here")
+            }
+            else{
+                setTimeout(() => {
+                    console.log("Done");
+                    res("Hello "+a)
+                },2000);
+            }
+        })
+
+        // let p= Promise.all([prom1,prom2])
+        // let p= Promise.allSettled([prom1,prom2])
+        // let p= Promise.race([prom1,prom2])
+        // let p= Promise.any([prom1,prom2])
+        prom.then((a)=>{
+            console.log(a);
+        }).catch((e)=>{
+            console.log(e+". Low number");
+            
+        })
+    </script>
+</body>
+</html>

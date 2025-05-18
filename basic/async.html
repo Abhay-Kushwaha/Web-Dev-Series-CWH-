@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        async function getdata() {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res(500)
+                }, 1000)
+            })
+        }
+
+        async function hello() {
+            console.log("Hello Abhimanyu");
+            let data = await getdata()
+            console.log(data);
+            data.then((v) => {
+                console.log("Fuck you " + v);
+            })
+            data.catch((e) => {
+                console.log(e + "hehe");
+            })
+            console.log("fekjck");
+            console.log("eckjhev");
+            console.log("The End");
+        }
+
+        hello()
+
+    </script>
+</body>
+
+</html>
